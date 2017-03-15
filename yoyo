@@ -1,0 +1,53 @@
+<html>
+<head>
+<script>
+come()
+function come() {
+  prompt("your mom ask if you want to come to the supermarket with her, do you want to come?")
+   if (user == "yes")
+  alert("you end up going to MAC, she meets some one and talks to long. you dehigrate")
+  else if (user == "no")
+
+  bored()
+}
+
+function bored() {
+  prompt("you have diffrent friends, a world wide traveler, stay at home guy or alwas with his mother. were do want to go?")
+   if (user == "wwt")
+    alert("you finaly get there and really have to pee cuz its so far. you knock fast, no one awners. the your wet. you die")
+   else if (user == "awhm")
+     alert("you walk over, he was grounded, and on the way back you get eaten by a cat")
+   else if (user == "hg")
+     hg()
+
+
+}
+
+function hg(){
+prompt("he let you in. some one knocks on the door. what do you do?")
+if (user == "dont open door")
+  alert("he knocks down your door, charmander does flame thrower, unlike the anmaie seires you die")
+else if (user == open door)
+gunpoint()
+}
+
+function gunpoint(){
+prompt("you open the door, he throws out a bulbusour. he says come with me or else. you coming?")
+  if (user == "no")
+  alert("you get spanked so hard from bulbasor , also he calls your mother")
+  else if (user == "yes")
+  taken()
+}
+
+taken(){
+  prompt("you end up below ground some where")
+}
+
+</script>
+
+</script>>
+</head>
+<body>
+
+</body>
+</html>
