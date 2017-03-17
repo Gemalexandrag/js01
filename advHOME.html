@@ -1,7 +1,7 @@
 <html>
 <head>
 <script>
-come()
+
 function come() {
   prompt("your mom ask if you want to come to the supermarket with her, do you want to come?")
    if (user == "yes")
@@ -27,7 +27,7 @@ function hg(){
 prompt("he let you in. some one knocks on the door. what do you do?")
 if (user == "dont open door")
   alert("he knocks down your door, charmander does flame thrower, unlike the anmaie seires you die")
-else if (user == open door)
+else if (user == "open door")
 gunpoint()
 }
 
@@ -40,9 +40,32 @@ prompt("you open the door, he throws out a bulbusour. he says come with me or el
 }
 
 taken(){
-  prompt("you end up below ground some where")
+  prompt("you end up below ground some where, your friend thinks you should escape. will you?")
+  if (user == "no")
+  alert("your friend disagrees runs away and the end up killing you")
+  else if (user == "yes")
+  where()
 }
 
+ function where(){
+prompt("you guys escape, but you have to think fast, you have five bucks, the supermarket is close, you can get some water, or just go home.")
+if (user == "supermarket")
+alert("mom is there, you get grounded")
+else if (user == "home")
+  home()
+
+ }
+
+ function home() {
+   prompt("you hear your mom coming home, your friend is with you, hide him or tell him to run?")
+   if (user == "run")
+   alert("mom catches you, lets just say you died")
+   else if (user == "hide")
+ }
+
+ var s
+ s = prompt("your mom ask if you want to come to the supermarket with her, do you want to come?")
+ come(s)
 </script>
 
 </script>>
