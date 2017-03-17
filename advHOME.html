@@ -3,74 +3,72 @@
 <script>
 
 function come() {
-  prompt("your mom ask if you want to come to the supermarket with her, do you want to come?")
-   if (user == "yes")
-  alert("you end up going to MAC, she meets some one and talks to long. you dehigrate")
-  else if (user == "no")
-
-  bored()
+  prompt("your mom ask if you want to come to the supermarket with her, do you want to come?");
+   if ("yes"){
+  alert("you end up going to MAC, she meets some one and talks to long. you dehigrate");
+}else if ("no"){
+  bored()}
 }
 
 function bored() {
-  prompt("you have diffrent friends, a world wide traveler, stay at home guy or alwas with his mother. were do want to go?")
-   if (user == "wwt")
-    alert("you finaly get there and really have to pee cuz its so far. you knock fast, no one awners. the your wet. you die")
-   else if (user == "awhm")
-     alert("you walk over, he was grounded, and on the way back you get eaten by a cat")
-   else if (user == "hg")
-     hg()
+  prompt("you have diffrent friends, a world wide traveler, stay at home guy or alwas with his mother. were do want to go?");
+   if ("wwt"){
+    alert("you finaly get there and really have to pee cuz its so far. you knock fast, no one awners. the your wet. you die");
+  }else if ("awhm"){
+     alert("you walk over, he was grounded, and on the way back you get eaten by a cat");
+   }else if ("hg"){
+     hg()}
 
 
-}
+};
 
 function hg(){
-prompt("he let you in. some one knocks on the door. what do you do?")
-if (user == "dont open door")
-  alert("he knocks down your door, charmander does flame thrower, unlike the anmaie seires you die")
-else if (user == "open door")
-gunpoint()
-}
+prompt("he let you in. some one knocks on the door. what do you do?");
+if ("dont open door"){
+  alert("he knocks down your door, charmander does flame thrower, unlike the anmaie seires you die");
+}else if ("open door"){
+gunpoint()}
+};
 
 function gunpoint(){
-prompt("you open the door, he throws out a bulbusour. he says come with me or else. you coming?")
-  if (user == "no")
-  alert("you get spanked so hard from bulbasor , also he calls your mother")
-  else if (user == "yes")
+prompt("you open the door, he throws out a bulbusour. he says come with me or else. you coming?");
+  if ("no"){
+  alert("you get spanked so hard from bulbasor , also he calls your mother");
+ } else if ("yes")
   taken()
-}
+};
 
-taken(){
-  prompt("you end up below ground some where, your friend thinks you should escape. will you?")
-  if (user == "no")
-  alert("your friend disagrees runs away and the end up killing you")
-  else if (user == "yes")
-  where()
-}
+function taken(){
+  prompt("you end up below ground some where, your friend thinks you should escape. will you?");
+  if ("no"){
+  alert("your friend disagrees runs away and the end up killing you");
+}else if ("yes"){
+  where()}
+};
 
  function where(){
-prompt("you guys escape, but you have to think fast, you have five bucks, the supermarket is close, you can get some water, or just go home.")
-if (user == "supermarket")
-alert("mom is there, you get grounded")
-else if (user == "home")
-  home()
+prompt("you guys escape, but you have to think fast, you have five bucks, the supermarket is close, you can get some water, or just go home.");
+if ("supermarket"){
+alert("mom is there, you get grounded");
+}else if ("home"){
+  home()}
 
- }
+};
 
  function home() {
-   prompt("you hear your mom coming home, your friend is with you, hide him or tell him to run?")
-   if (user == "run")
-   alert("mom catches you, lets just say you died")
-   else if (user == "hide")
+   prompt("you hear your mom coming home, your friend is with you, hide him or tell him to run?");
+   if ("run")
+   alert("mom catches you, lets just say you died");
+ }else if ("hide"){
+   alert("you won...for now!")}
  }
 
- var s
- s = prompt("your mom ask if you want to come to the supermarket with her, do you want to come?")
- come(s)
-</script>
 
-</script>>
+ come()
+
+
+</script>
 </head>
 <body>
-
 </body>
 </html>
