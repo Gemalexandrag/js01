@@ -9,19 +9,38 @@
         width: 500px;
         padding: 120px 0;
         margin: 50px auto;
-        border: 5px solid darkseagreen;
+        border: 5px solid cyan;
         border-radius: 5px;
         font-size: 18px;
       }
     </style>
-    <script>
-  
-  </script>
   </head>
   <body>
-    <div id="card"><p>when was my birtthday<p></div>
+    <div id="card"></div>
     <input type="text" id="answer"/>
     <button onclick="answer();">Answer</button>
   </body>
+  <script>
+function answer(){
+
+// do what you did on line 42 for the i variable
+// but here you have to do it for the currentQuestion variable
+currentQuestion = currentQuestion + 1;
+
+document.getElementById("card").innerHTML = q[currentQuestion]
+}
+
+
+var q = ["when is my birthday", "what did i bring", "do i have an apple id", "do i like css more then javascript", "does danil make me crazy", "is po spelled with a e", "do i like pizza"];
+var i = 0;
+
+currentQuestion = 0
+while (i < q.length) {
+document.getElementById("card").innerHTML = q[currentQuestion]
+//
+//(q[i]);
+i = i + 1;
+}
+</script>
 </html>
 Contact GitHub API Training Shop Blog About
