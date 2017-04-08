@@ -24,32 +24,63 @@
 
   var q = ["when is my birthday",
   "what did i bring",
-  "do i have an apple id",
-  "do i like css more then javascript",
-  "does danil make me crazy",
-  "is po spelled with a e",
-  "do i like pizza"];
+  "do i have an apple id"
+]
 
+var a = [
+  "march 30",
+  "cookies",
+  "yes"
+]
 function answer(){
 
 // do what you did on line 42 for the i variable
 // but here you have to do it for the currentQuestion variable
 
-currentQuestion = (currentQuestion + 1) % q.length;
+  var input = document.getElementById("answer")
 
+  var useranswer = input.value;
 
+  if (useranswer === a[0]){
+    alert("yayayayyayayyayayyayyayayayyaay")
+  } else {
+    alert("you failEd me. shame")
+  }
 
-document.getElementById("card").innerHTML = q[currentQuestion]
-}
-function wtc(){
-
-}
-currentQuestion = 0
-for (i = 0; i < q.length; i++) {
-document.getElementById("card").innerHTML = q[currentQuestion]
-//
-//(q[i]);
+nq()
 
 }
+
+
+function nq(){
+
+    var input = document.getElementById("answer")
+var useranswer = input.value;
+
+  if (useranswer === a[1]){
+    alert("yayayayyayayyayayyayyayayayyaay")
+  } else {
+    alert("you failEd me. shame")
+  }
+
+nnq()
+}
+
+function nnq(){
+
+    var input = document.getElementById("answer")
+var useranswer = input.value;
+
+  if (useranswer === a[2]){
+    alert("yayayayyayayyayayyayyayayayyaay")
+  } else {
+    alert("you failEd me. shame")
+  }
+}
+
+
+var card = document.getElementById("card");
+
+
 </script>
 </html>
