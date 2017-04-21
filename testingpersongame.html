@@ -1,0 +1,172 @@
+<html>
+  <head>
+    <script src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
+  </head>
+  <body>
+    <script>
+    var floor
+    var dead
+    var tele
+    var der = 0
+    var cur = 0
+    var o
+      function start() {
+        Crafty.init();
+        platform(0,900,100,10)
+        platform(0,600,100,10)
+        platform(0,300,100,10)
+        platform(300,900,100,10)
+        platform(750,900,100,10)
+        platform(1000,900,100,10)
+        teleporter(1200,900,100,10,"mid")
+        teleporter(1200,600,100,10,"high")
+        death(920,625,10,50)
+        death(920,775,10,50)
+        death(920,25,10,50)
+        death(920,175,10,50)
+        death(800,500,100,100)
+        death(500,500,100,50)
+        platformMove(200,600,100,10)
+        win(1200,300,100,10)
+        glass1(300,300,100,10)
+        glass2(750,300,100,10)
+        glass3(1000,300,100,10)
+        test(750,299,100,1,"mid")
+        test(300,299,100,1,"first")
+        test(1000,299,100,1,"last")
+        var player = Crafty.e('Player ,2D, DOM, Color, Twoway, Gravity,GroundAttacher')
+        .attr({x: 25, y: 700, w: 50, h: 50}).color('#F00')
+        .twoway(200)
+        .gravity('Floor')
+        .bind("CheckLanding", function(ground) {
+        if (player.y + player.h > floor.y + player.dy) { // forbid landing, if player's feet are not above ground
+        player.canLand = false}
+        if ((player.y + player.h > Move.y + player.dy)&&(player.y<700)) { // forbid landing, if player's feet are not above ground
+        player.canLand = false}
+        if ((player.y + player.h > Glassy.y + player.dy)&&(player.y<400)) { // forbid landing, if player's feet are not above ground
+        player.canLand = false}
+        })
+        .bind("EnterFrame", function() {
+            if (player.y > 1000){
+             player.x = 25
+             player.y = 700
+           }
+           if (player.x < -50){
+            player.x = 25
+            player.y = 700
+          }
+        })
+        function death(xp,yp,wp,hp){
+          dead = Crafty.e('Death, 2D, Canvas, Color, Collision')
+          .attr({x: xp, y: yp, w: wp, h: hp})
+          .checkHits('Player')
+          .bind("HitOn", function(){
+            player.x = 25
+            player.y = 700
+          })
+          .color('black');
+        }
+        function teleporter(xp,yp,wp,hp,loc){
+          tele = Crafty.e('Teleporter, 2D, Canvas, Color, Collision')
+          .attr({x: xp, y: yp, w: wp, h: hp})
+          .checkHits('Player')
+          .bind("HitOn", function(){
+            if (loc == "mid"){
+              player.x = 25
+              player.y = 450
+            }
+            if (loc == "high"){
+              player.x = 25
+              player.y = 0
+              Glassy.x = 300
+              Glassyt.x = 750
+              Glassyr.x = 1000
+            }
+          })
+          .color('purple');
+        }
+        function platform(xp,yp,wp,hp){
+          floor = Crafty.e('Floor, 2D, Canvas, Color')
+          .attr({x: xp, y: yp, w: wp, h: hp})
+          .color('green');
+        }
+        function platformMove(xp,yp,wp,hp){
+          Move = Crafty.e('Floor, 2D, Canvas, Color')
+          .attr({x: xp, y: yp, w: wp, h: hp})
+          .bind("EnterFrame", function() {
+            if (this.x >1000){
+              der = 1
+            }
+            if (this.x <200){
+              der = 0
+            }
+            if (der === 0){
+               this.x = this.x + 2
+             }
+             if (der === 1){
+              this.x = this.x - 2
+            }
+          })
+          .color('orange');
+        }
+        function win(xp,yp,wp,hp){
+          win = Crafty.e('Win, 2D, Canvas, Color, Collision')
+          .attr({x: xp, y: yp, w: wp, h: hp})
+          .checkHits('Player')
+          .bind("HitOn", function(){
+            player.destroy()
+            Crafty.e("2D, Canvas, Text").attr({ x: 100, y: 100 })
+            .text("A winner is you")
+            .textFont({ size: '50px', weight: 'bold' })
+            .textColor('#D4AF37');
+          })
+          .color('gold');
+        }
+        function glass1(xp,yp,wp,hp){
+          Glassy = Crafty.e('Floor, 2D, Canvas, Color')
+          .attr({x: xp, y: yp, w: wp, h: hp})
+          .color('blue');
+
+        }
+        function glass2(xp,yp,wp,hp){
+          Glassyt = Crafty.e('Floor, 2D, Canvas, Color')
+          .attr({x: xp, y: yp, w: wp, h: hp})
+          .color('blue');
+
+        }
+        function glass3(xp,yp,wp,hp){
+          Glassyr = Crafty.e('Floor, 2D, Canvas, Color')
+          .attr({x: xp, y: yp, w: wp, h: hp})
+          .color('blue');
+
+        }
+        function test(xp,yp,wp,hp,order){
+          Tester = Crafty.e('2D, Canvas, Color, Collision')
+          .attr({x: xp, y: yp, w: wp, h: hp})
+          .color('blue',0)
+          .checkHits('Player')
+          .bind("HitOn", function(){
+            cur = Crafty.frame()+10
+            o =order
+          })
+          .bind("EnterFrame", function(){
+            if (cur == Crafty.frame()){
+              var hi= player.x
+              if (o == "first")
+              Glassy.x = Glassy.x-1000
+              if (o == "mid")
+              Glassyt.x = Glassyt.x-1000
+              if (o == "last")
+              Glassyr.x = Glassyr.x-1000
+              player.x = hi
+            }
+          });
+
+
+      }
+    }
+
+      window.onload = start;
+      </script>
+  </body>
+</html>
