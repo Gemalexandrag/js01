@@ -1,18 +1,55 @@
 <html>
   <head>
     <title>My Mad Lib</title>
+
+    <link type="text/css" rel="stylesheet" href="madlibs.css">
+    <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
+
   </head>
   <body>
     <script>
       // 1. recognize when user clicks go
       function go() {
         alert("lets go")
+}
 
+
+      function mc(){
       var nav = document.getElementById("nav")
 
-      alert("mcdonalds is " + adj.value + ". there open " + number.value + tod.value +" to " + verb.value + " you. pease come so you don't" + verb1.value + " sales. Also help me, a big mac " + verb2.value + " me!")
+      alert("mcdonalds is " + adj.value + ". there open " + number.value + tod.value +" to " + verb.value + " you. pease come so you don't " + verb1.value + " sales. Also help me, a big mac " + verb2.value + " me!")
+    }
+
+      function people(){
+
+          alert("people are " + adj.value + " you feel me? i reamber when one of them today told my class to " + verb.value + " on the floor, i'm a human, not color blind. ")
 
       }
+
+      function sweatshirt(){
+
+          alert("you can wear my " + noun.value + " and you can tell you " + noun1.value + " and the rest of this song ")
+
+      }
+
+      function jb(){
+
+          alert("if i was you " + noun.value + " i never " + verb.value + " you go ")
+
+      }
+
+      function place(){
+
+          alert("in a " + adj.value + " far far way there was a subway! it made me " + verb.value + ". now i can't " + verb1.value + ". wish me " + noun.value)
+
+      }
+
+      function place(){
+
+          alert(" " + adj.value + " far far way there was a subway! it made me " + verb.value + ". now i can't " + verb1.value + ". wish me " + noun.value)
+
+      }
+
 
       // 2. take what user said
 
@@ -20,7 +57,13 @@
       // 3. put what user said into story
     </script>
 
+    <p align="center">
 
+    <label for="noun">noun</label>
+    <input id="noun"></input><br>
+
+    <label for="noun">noun</label>
+    <input id="noun1"></input><br>
 
     <label for="adj">Adjective</label>
     <input id="adj"></input><br>
@@ -42,6 +85,20 @@
     <label for="verb">verb</label>
     <input id="verb2"></input><br>
 
-    <button onclick="go();">Go!</button>
+
+      <button onclick="mc();">mcdoanleds!</button>
+        <button onclick="people();"> people! </button>
+        <button onclick="sweatshirt();">sweat shirt!</button>
+        <button onclick="jb();">jb!</button>
+        <button onclick="place();">place!</button>
+
+        <br> <br> <br> <br> <br> <br> <br>
+        <h1>                                 madlibs </h1>
+
+    <img src="https://s-media-cache-ak0.pinimg.com/originals/9f/05/4b/9f054beed9b3527c52eed5e329d758f4.gif" width="400px"  >
+        <img src="https://media.giphy.com/media/2ouwhHuKvY4aQ/giphy.gif" width="400px"  >
+            <img src="https://media.giphy.com/media/q540XuK9hMxY4/giphy.gif" width="400px"  >" width="400px"  >
+
+      </p>
   </body>
 </html>
